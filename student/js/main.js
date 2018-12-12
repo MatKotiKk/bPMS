@@ -16,6 +16,22 @@ getManufacturers = function(){
     $("#container").html(insert);
   });
 };
+getCarList = function(){
+  $.get("manufacturer", function(cars){
+    i = j = 0;
+    insert = "<table>";
+    while (car = cars[i++]) {
+      j = 0;
+      insert += "<tr>";
+      while (attr = cardata[j++]) {
+        insert += "<td>" + car[attr]  + "</td>";
+      }
+      insert += "</tr>";
+    }
+    insert += "</table>";
+    $("#container").html(insert);
+  });
+};
 
 listOwn = function(e){
   name = $(e.target).text();
@@ -41,7 +57,13 @@ addNewManufacturer = function(e){
   $.post("addManufacturers", newmanufacturer, function(){
     getManufacturers();
   });
+};
 
+addNewCarToList = function(e){
+  newcaradd = $(e.target).parent("form").serializeArray();
+    $.post("addNewCars", newcaradd, function(){
+    getCarList();
+  });
 };
 
 
@@ -49,7 +71,11 @@ $(document).ready(function(){
   $("#newmanufacturer").click(function(){
     $.get("newmanufacturers.html", function(form){
       $("#container").html(form);
-      console.log(form);
+    });
+  });
+  $("#newcaradd").click(function(){
+    $.get("newcars.html", function(form){
+      $("#container").html(form);
     });
   });
   $("#manufacturelistlink").click(function(){

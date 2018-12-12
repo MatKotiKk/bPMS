@@ -31,6 +31,10 @@ body {
   color: #000;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 .header li a:hover{
 	background-color: #FFD700;
 	color:#000

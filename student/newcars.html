@@ -1,0 +1,38 @@
+<form class="addNewCars" action="addNewCars" method="post">
+  <label for="name">
+    Name:
+  </label>
+  <input type="text" name="name" value="" required>
+  <br>
+  <label for="consumption">
+    Consumption:
+  </label>
+  <input type="text" name="consumption" value="" required>
+  <br>
+  <label for="color">
+    Color:
+  </label>
+  <input type="text" name="color" value="" required>
+  <br>
+  <label for="manufacturer">
+    Manufacturer:
+  </label>
+  <input type="text" name="manufacturer" value="" required>
+  <br>
+  <label for="available">
+    Available:
+  </label>
+  <input type="number" name="available" min="1" value="" required>
+  <br>
+  <label for="year">
+    Year:
+  </label>
+  <input type="number" name="year" min="1" value="" required>
+  <br>
+  <label for="horsepower">
+    Horsepower:
+  </label>
+  <input type="number" name="horsepower" min="1" value="" required>
+  <br>
+  <button type="button" onclick="addNewCarToList(event)" name="button">Add</button>
+</form>
