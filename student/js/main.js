@@ -17,7 +17,7 @@ getManufacturers = function(){
   });
 };
 getCarList = function(){
-  $.get("manufacturer", function(cars){
+  $.get("cars", function(cars){
     i = j = 0;
     insert = "<table>";
     while (car = cars[i++]) {
@@ -61,7 +61,7 @@ addNewManufacturer = function(e){
 
 addNewCarToList = function(e){
   newcaradd = $(e.target).parent("form").serializeArray();
-    $.post("addNewCars", newcaradd, function(){
+    $.post("addCar", newcaradd, function(){
     getCarList();
   });
 };
